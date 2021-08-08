@@ -1,25 +1,38 @@
 import React from 'react';
-import logo from './logo.svg';
+import { useEffect } from 'react';
+import { useState } from 'react';
 import './App.css';
+import MyMessage from './components/MyMessage';
+
+export type UserType = {
+    first_name: string,
+    age: number,
+    zodiac_sign: string,
+    is_cute: boolean,
+}[]
 
 function App() {
+
+  const [users, setUsers] = useState<UserType[]>([])
+
+  useEffect(() => {
+    fetch('./data.json')
+    .then(resp => resp.json())
+    .then(data => {
+      console.log(data)
+      setUsers(data)
+    })
+  }, []);
+
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App"> 
+    <h1>TypeScript Practice</h1>
+    <br />
+        <MyMessage user={users}/>
     </div>
+   
   );
 }
 

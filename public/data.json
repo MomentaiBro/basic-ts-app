@@ -1,0 +1,26 @@
+[
+    {
+        "first_name": "Alexander",
+        "age": 28,
+        "zodiac_sign": "Aries",
+        "is_cute": true
+    },
+    {
+        "first_name": "Jo",
+        "age": 32,
+        "zodiac_sign": "Leo",
+        "is_cute": true
+    },
+    {
+        "first_name": "Blake",
+        "age": 30,
+        "zodiac_sign": "Aquarius",
+        "is_cute": true
+    },
+    {
+        "first_name": "Steven",
+        "age": 29,
+        "zodiac_sign": "Taurus",
+        "is_cute": true
+    }
+]
